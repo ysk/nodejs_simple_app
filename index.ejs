@@ -19,17 +19,15 @@
             <input type="submit" value="Click" class="btn btn-primary">
         </form>
 
-
         <table>
-        <% for(var key in data) {%>
-            <tr>
-                <td><%= key %></td>
-                <td><%= data[key] %></td>
-            </tr>
-        <% } %>
+            <% var id=0; %>
+            <% for(var key in data) {%>
+                <%- include('data_item', {id:++id, key:key, val:[data[key]]}) %>
+            <% } %>
         </table>
-    </div>
 
+    </div>
     <a href="/other">otherへ</a>
 </body>
+</html>
 </html>
